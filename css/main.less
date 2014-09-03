@@ -1,89 +1,12 @@
 /* author = taksenov@gmail.com */
-/* Fonts */
-@font-face {
-    font-family: "MyriadPro-Bold";
-    src: url("../fonts/myriadpro/MyriadPro-Bold.eot");
-    src: url("../fonts/myriadpro/MyriadPro-Bold.eot?#iefix") format("embedded-opentype"),
-         url("../fonts/myriadpro/MyriadPro-Bold.woff") format("woff"),
-         url("../fonts/myriadpro/MyriadPro-Bold.ttf") format("truetype"),
-         url("../fonts/myriadpro/MyriadPro-Bold.svg#MyriadPro-Bold") format("svg");
-}
-@font-face {
-    font-family: "MyriadPro-BoldCond";
-    src: url("../fonts/myriadpro/MyriadPro-BoldCond.eot");
-    src: url("../fonts/myriadpro/MyriadPro-BoldCond.eot?#iefix") format("embedded-opentype"),
-         url("../fonts/myriadpro/MyriadPro-BoldCond.woff") format("woff"),
-         url("../fonts/myriadpro/MyriadPro-BoldCond.ttf") format("truetype"),
-         url("../fonts/myriadpro/MyriadPro-BoldCond.svg#MyriadPro-BoldCond") format("svg");
-}
-@font-face {
-    font-family: "MyriadPro-BoldCondIt_0";
-    src: url("../fonts/myriadpro/MyriadPro-BoldCondIt_0.eot");
-    src: url("../fonts/myriadpro/MyriadPro-BoldCondIt_0.eot?#iefix") format("embedded-opentype"),
-         url("../fonts/myriadpro/MyriadPro-BoldCondIt_0.woff") format("woff"),
-         url("../fonts/myriadpro/MyriadPro-BoldCondIt_0.ttf") format("truetype"),
-         url("../fonts/myriadpro/MyriadPro-BoldCondIt_0.svg#MyriadPro-BoldCondIt_0") format("svg");
-}
-@font-face {
-    font-family: "MyriadPro-Cond";
-    src: url("../fonts/myriadpro/MyriadPro-Cond.eot");
-    src: url("../fonts/myriadpro/MyriadPro-Cond.eot?#iefix") format("embedded-opentype"),
-         url("../fonts/myriadpro/MyriadPro-Cond.woff") format("woff"),
-         url("../fonts/myriadpro/MyriadPro-Cond.ttf") format("truetype"),
-         url("../fonts/myriadpro/MyriadPro-Cond.svg#MyriadPro-Cond") format("svg");
-}
-@font-face {
-    font-family: "MyriadPro-It";
-    src: url("../fonts/myriadpro/MyriadPro-It.eot");
-    src: url("../fonts/myriadpro/MyriadPro-It.eot?#iefix") format("embedded-opentype"),
-         url("../fonts/myriadpro/MyriadPro-It.woff") format("woff"),
-         url("../fonts/myriadpro/MyriadPro-It.ttf") format("truetype"),
-         url("../fonts/myriadpro/MyriadPro-It.svg#MyriadPro-It") format("svg");
-}
-@font-face {
-    font-family: "MyriadPro-Regular";
-    src: url("../fonts/myriadpro/MyriadPro-Regular.eot");
-    src: url("../fonts/myriadpro/MyriadPro-Regular.eot?#iefix") format("embedded-opentype"),
-         url("../fonts/myriadpro/MyriadPro-Regular.woff") format("woff"),
-         url("../fonts/myriadpro/MyriadPro-Regular.ttf") format("truetype"),
-         url("../fonts/myriadpro/MyriadPro-Regular.svg#MyriadPro-Regular") format("svg");
-}
-@font-face {
-    font-family: "MyriadPro-Semibold";
-    src: url("../fonts/myriadpro/MyriadPro-Semibold.eot");
-    src: url("../fonts/myriadpro/MyriadPro-Semibold.eot?#iefix") format("embedded-opentype"),
-         url("../fonts/myriadpro/MyriadPro-Semibold.woff") format("woff"),
-         url("../fonts/myriadpro/MyriadPro-Semibold.ttf") format("truetype"),
-         url("../fonts/myriadpro/MyriadPro-Semibold.svg#MyriadPro-Semibold") format("svg");
-}
-.myriad-b {
-    font-family: "MyriadPro-Bold";
-}
-.myriad-bc {
-    font-family: "MyriadPro-BoldCond";
-}
-.myriad-bcit_0 {
-    font-family: "MyriadPro-BoldCondIt_0";
-}
-.myriad-c {
-    font-family: "MyriadPro-Cond";
-}
-.myriad-it {
-    font-family: "MyriadPro-It";
-}
-.myriad-r {
-    font-family: "MyriadPro-Regular";
-}
-.myriad-sb {
-    font-family: "MyriadPro-Semibold";
-}
-/* ------------------------------------------- */
+
 /* MainSettings */
 @import "mixins";
+@import "fonts";
 
 @container-width : 1000px;
 @container-heigth: 650px;
-@body-font       : "MyriadPro-Regular";
+//@body-font       : "MyriadPro-Regular";
 
 .wrapper {
     position: relative;
@@ -118,6 +41,10 @@ p {
 body{
     background: url("../img/common/bg.png") #e5e5e5;
 }
+/* запрет изменения размера textarea */
+textarea {
+	resize: none;
+}
 /* ------------------------------------------- */
 
 /* MainContainer */
@@ -132,6 +59,11 @@ body{
     .border-radius(5px);
     overflow: hidden;
     margin: auto;
+
+    -webkit-box-shadow: 0 1px 4px rgba(0,0,0,.19), inset 0 2px rgba(255,255,255,.58), inset 0 0 5px rgba(255,255,255,.38);
+    -moz-box-shadow: 0 1px 4px rgba(0,0,0,.19), inset 0 2px rgba(255,255,255,.58), inset 0 0 5px rgba(255,255,255,.38);
+    box-shadow: 0 1px 4px rgba(0,0,0,.19), inset 0 2px rgba(255,255,255,.58), inset 0 0 5px rgba(255,255,255,.38);
+
 }
 /* ------------------------------------------- */
 /* GridColumns */
@@ -146,9 +78,10 @@ margin-left: -15px; */
     margin: 0;
     padding: 0;
 /*    background: #2a6496;*/
-    border: 1px solid #000000;
+    /*border: 1px solid #000000;*/
 }
-.maincontainer__gridcols .cols.col-6  {width: 50%;}
+.maincontainer__gridcols .cols.col-6  {width: 49.75%;}
+.maincontainer__gridcols .cols.col-05percent  {width: 0.5%;}
 .maincontainer__gridcols .cols.col-12 {width: 100%;}
 .cl-01 {height: 78px  ;}
 .cl-02 {height: 236px ;}
@@ -158,12 +91,12 @@ margin-left: -15px; */
 /* ------------------------------------------- */
 /* CaptionBlock */
 .csbg-caption {
+    .segoe-ui;
     text-transform: uppercase;
-/*    font-family: 'Segoe UI';*/
     color: #000000;
     font-size: 24px;
     font-weight: 400;
-    padding-top: 28px;
+    padding-top: 22px;
     text-align: center;
     line-height: 1;
 }
@@ -171,10 +104,12 @@ margin-left: -15px; */
 /* Options and Result block */
 .options__caption {
     width: auto;
-    border: 1px solid #000000;
+//    border: 1px solid #000000;
     p {
+        .segoe-ui;
         font-size: 18px;
-        padding-top: 20px;
+        font-weight: 400;
+        padding-top: 16px;
         text-align: center;
         line-height: 1;
     }
@@ -185,16 +120,19 @@ margin-left: -15px; */
 .options__br-radius_label {
     float: left;
     width: 37.2%;
-    border: 1px solid #000000;
+    /*border: 1px solid #000000;*/
     padding-top: 34px;
     text-align: right;
     line-height: 1;
+    font-size: 18px;
+    font-weight: 400;
+    .segoe-ui;
 }
 .br-radius_slider {
     float: left;
     width: 62.8%;
-    border: 1px solid #000000;
-    padding-top: 34px;
+    /*border: 1px solid #000000;*/
+    padding-top: 38px;
     padding-left: 28px;
     padding-right: 80px;
 }
@@ -204,16 +142,19 @@ margin-left: -15px; */
 .options__br-size_label {
     float: left;
     width: 37.2%;
-    border: 1px solid #000000;
-    padding-top: 34px;
+  /*  border: 1px solid #000000;*/
+    padding-top: 32px;
     text-align: right;
     line-height: 1;
+    font-size: 18px;
+    font-weight: 400;
+    .segoe-ui;
 }
 .br-size_slider {
     float: left;
     width: 62.8%;
-    border: 1px solid #000000;
-    padding-top: 34px;
+    /*border: 1px solid #000000;*/
+    padding-top: 38px;
     padding-left: 28px;
     padding-right: 80px;
 }
@@ -223,30 +164,56 @@ margin-left: -15px; */
 .options__btn-text_label {
     float: left;
     width: 37.2%;
-    border: 1px solid #000000;
-    padding-top: 36px;
+    /*border: 1px solid #000000;*/
+    padding-top: 32px;
     text-align: right;
     line-height: 1;
+    font-size: 18px;
+    font-weight: 400;
+    .segoe-ui;
+    .segoe-ui;
 }
 .btn-text {
     float: left;
     width: 62.8%;
-    border: 1px solid #000000;
+  /*  border: 1px solid #000000;*/
     padding-top: 28px;
     padding-left: 28px;
-/*    padding-right: 80px;*/
+    color: #727272;
+    font-size: 12px;
+    font-weight: 400;
+    .myriad-r;
 }
 .btn-text_input {
     width: 200px;
     height: 28px;
+    padding-left: 8px;
 }
+
+    /* грязный хак для границы из трех линий*/
+    .double-border {
+        float: left;
+        width: 3px;
+        height: 236px;
+        border-left: 3px double #cdcdcd;
+    }
+    .once-border {
+        float: left;
+        margin-top: 1px;
+        width: 2px;
+        border-right: 1px solid #cdcdcd;
+        height: 235px;
+    }
+    /* --------------------------------------- */
 
 .result__caption {
     width: auto;
-    border: 1px solid #000000;
+    /*border: 1px solid #000000;*/
     p {
+        .segoe-ui;
         font-size: 18px;
-        padding-top: 20px;
+        font-weight: 500;
+        padding-top: 16px;
         text-align: center;
         line-height: 1;
     }
@@ -255,31 +222,65 @@ margin-left: -15px; */
     padding-top: 68px;
     padding-left: 172px;
     .result__button_prop {
+
+        /* эти свойства меняются в javascript */
+        -webkit-border-radius: 4px;
+        -moz-border-radius:    4px;
+        border-radius:         4px;
+        border: solid 1px #3181b4;
+        /* ---------------------------------- */
+
         height: 45px;
         width: 140px;
-       	-webkit-border-radius: 4px;
-        -moz-border-radius: 4px;
-        border-radius: 4px;
         background-color: #37a1e4;
         -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.19), inset 0 2px rgba(255,255,255,.58), inset 0 0 5px rgba(255,255,255,.38);
         -moz-box-shadow: 0 1px 1px rgba(0,0,0,.19), inset 0 2px rgba(255,255,255,.58), inset 0 0 5px rgba(255,255,255,.38);
         box-shadow: 0 1px 1px rgba(0,0,0,.19), inset 0 2px rgba(255,255,255,.58), inset 0 0 5px rgba(255,255,255,.38);
-        border: solid 1px #3181b4;
         background-image: -webkit-linear-gradient(top, rgba(255,255,255,.26), rgba(255,255,255,0));
         background-image: -moz-linear-gradient(top, rgba(255,255,255,.26), rgba(255,255,255,0));
         background-image: -o-linear-gradient(top, rgba(255,255,255,.26), rgba(255,255,255,0));
         background-image: linear-gradient(to bottom, rgba(255,255,255,.26), rgba(255,255,255,0));
+        font-family: "Myriad Pro";
+        font-size: 16px;
+        font-weight: bold;
+        color: #fff;
+        text-shadow: 0 1px rgba(0,0,0,.32);
     }
+}
+/* ------------------------------------------- */
+/* Divider block */
+.divider {
+    margin: 0 30px;
+    border-bottom: 1px dashed #a1a1a1;
+    height: 16px;
 }
 /* ------------------------------------------- */
 /* Block of very good code */
 .html-code {
     padding-left: 274px;
     padding-top: 48px;
+    .myriad-r;
+    color: #717171;
+    font-size: 12px;
+    font-weight: 400;
+    .html-code__textarea {
+        width: 220px;
+        height: 110px;
+        padding: 8px;
+    }
 }
 .css-code {
     padding-top: 48px;
     padding-left: 10px;
+    .myriad-r;
+    color: #717171;
+    font-size: 12px;
+    font-weight: 400;
+    .css-code__textarea {
+        width: 220px;
+        height: 110px;
+        padding: 8px;
+    }
 }
 /* ------------------------------------------- */
 /* e-mail block */
@@ -289,6 +290,11 @@ margin-left: -15px; */
     .e-mail-text_input {
         height: 28px;
         width: 218px;
+        .myriad-r;
+        color: #727272;
+        font-size: 12px;
+        font-weight: 400;
+        padding-left: 8px;
     }
 }
 .submit__button {
@@ -309,12 +315,18 @@ margin-left: -15px; */
         background-image: -moz-linear-gradient(top, rgba(255,255,255,.34), rgba(255,255,255,0));
         background-image: -o-linear-gradient(top, rgba(255,255,255,.34), rgba(255,255,255,0));
         background-image: linear-gradient(to bottom, rgba(255,255,255,.34), rgba(255,255,255,0));
+
+        .myriad-r;
+        font-size: 14px;
+        font-weight: bold;
+        color: #fff;
+        text-shadow: 0 1px rgba(0,0,0,.32);
     }
 }
 /* ------------------------------------------- */
 
 
-/*box-shadow: 0px 1px 1px 0.00px rgba(0, 0, 0, 0.19);
-width: 109px;
-height: 38px;*/
+
+
+
 
