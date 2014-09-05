@@ -1,13 +1,10 @@
-/* Jquery UI slider */
 (function(){
 
     /* Переменные */
     var
         btnResult = $('.result__button_prop'),
         htmlCodeResultArea = $('#html-code__text'),
-        cssCodeResultArea = $('#css-code__text'),
-
-        one = 1;
+        cssCodeResultArea = $('#css-code__text');
     /* ------------------------------------- */
 
     /* Ползунок изменения border-radius'а */
@@ -33,7 +30,7 @@
                 style.webkitBorderRadius = val + 'px';
                 style.mozBorderRadius = val + 'px';
 
-            updateResult();
+            cssResult();
         }
     });
     /* ------------------------------------- */
@@ -59,7 +56,7 @@
             var val = $('#slider__br-size').slider('value');
                 style.borderWidth = val + 'px';
 
-        updateResult();
+            cssResult();
         }
     });
     /* ------------------------------------- */
@@ -68,29 +65,28 @@
     $(document).ready ( function(){
         $('#btn-text_value').keyup(function() {
             $('#result__button_value').text($(this).val());
+            htmlCodeResultArea.text(
+                '<!-- HTML -->\n' +
+                '<!-- Button. Код сгенерирован автоматически -->\n' +
+                '<button class="super-button" id="">' + $(this).val() + '</button>\n' +
+                '<!-- Button end -->'
+            );
         });
-        updateResult();
     });
     /* ------------------------------------- */
 
     /* html и css код кнопки */
-    var updateResult = function (){
+    var cssResult = function (){
 
         var btnBorderRadius = btnResult.css('border-radius'),
-            btnBorder = btnResult.css('border'),
-            btnText = '',
-            one = 1;
-
-        htmlCodeResultArea.text(
-
-        )
+            btnBorder = btnResult.css('border');
 
         cssCodeResultArea.text(
             /* Статический код CSS */
-/*            '*//* CSS *//*\n' +
-            '*//* Button. Код сгенерирован автоматически *//*\n' +
+            '/* CSS */\n' +
+            '/* Button. Код сгенерирован автоматически */\n' +
             '.super-button {\n' +
-            '*//* эти свойства меняются в генераторе *//*\n' +*/
+            '/* эти свойства меняются в генераторе */\n' +
             /* ------------------------------------- */
 
             /* динамический код CSS */
@@ -121,9 +117,17 @@
         );
 
     };
+    cssResult();
 
-    updateResult();
+    var htmlResult = function () {
+        htmlCodeResultArea.text(
+            '<!-- HTML -->\n' +
+            '<!-- Button. Код сгенерирован автоматически -->\n' +
+            '<button class="super-button" id="">Button text</button>\n' +
+            '<!-- Button end -->'
+        );
+    };
+    htmlResult();
     /* ------------------------------------- */
-
 
 })();
