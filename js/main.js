@@ -32,6 +32,8 @@
                 style.borderRadius = val + 'px';
                 style.webkitBorderRadius = val + 'px';
                 style.mozBorderRadius = val + 'px';
+
+            updateResult();
         }
     });
     /* ------------------------------------- */
@@ -56,6 +58,8 @@
         function setInputsFromSlider (event, ui) {
             var val = $('#slider__br-size').slider('value');
                 style.borderWidth = val + 'px';
+
+        updateResult();
         }
     });
     /* ------------------------------------- */
@@ -65,6 +69,7 @@
         $('#btn-text_value').keyup(function() {
             $('#result__button_value').text($(this).val());
         });
+        updateResult();
     });
     /* ------------------------------------- */
 
@@ -76,8 +81,9 @@
             btnText = '',
             one = 1;
 
-        console.log(btnBorderRadius);
-        console.log(btnBorder);
+        htmlCodeResultArea.text(
+
+        )
 
         cssCodeResultArea.text(
             /* Статический код CSS */
