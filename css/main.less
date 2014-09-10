@@ -6,7 +6,6 @@
 
 @container-width : 1000px;
 @container-heigth: 650px;
-//@body-font       : "MyriadPro-Regular";
 
 .wrapper {
     position: relative;
@@ -77,8 +76,6 @@ margin-left: -15px; */
     float: left;
     margin: 0;
     padding: 0;
-/*    background: #2a6496;*/
-    /*border: 1px solid #000000;*/
 }
 .maincontainer__gridcols .cols.col-6  {width: 49.75%;}
 .maincontainer__gridcols .cols.col-05percent  {width: 0.5%;}
@@ -104,7 +101,6 @@ margin-left: -15px; */
 /* Options and Result block */
 .options__caption {
     width: auto;
-//    border: 1px solid #000000;
     p {
         .segoe-ui;
         font-size: 18px;
@@ -120,7 +116,6 @@ margin-left: -15px; */
 .options__br-radius_label {
     float: left;
     width: 37.2%;
-    /*border: 1px solid #000000;*/
     padding-top: 34px;
     text-align: right;
     line-height: 1;
@@ -131,7 +126,6 @@ margin-left: -15px; */
 .br-radius_slider {
     float: left;
     width: 62.8%;
-    /*border: 1px solid #000000;*/
     padding-top: 38px;
     padding-left: 28px;
     padding-right: 80px;
@@ -142,7 +136,6 @@ margin-left: -15px; */
 .options__br-size_label {
     float: left;
     width: 37.2%;
-  /*  border: 1px solid #000000;*/
     padding-top: 32px;
     text-align: right;
     line-height: 1;
@@ -153,7 +146,6 @@ margin-left: -15px; */
 .br-size_slider {
     float: left;
     width: 62.8%;
-    /*border: 1px solid #000000;*/
     padding-top: 38px;
     padding-left: 28px;
     padding-right: 80px;
@@ -164,7 +156,6 @@ margin-left: -15px; */
 .options__btn-text_label {
     float: left;
     width: 37.2%;
-    /*border: 1px solid #000000;*/
     padding-top: 32px;
     text-align: right;
     line-height: 1;
@@ -176,7 +167,6 @@ margin-left: -15px; */
 .btn-text {
     float: left;
     width: 62.8%;
-  /*  border: 1px solid #000000;*/
     padding-top: 28px;
     padding-left: 28px;
     color: #727272;
@@ -208,7 +198,6 @@ margin-left: -15px; */
 
 .result__caption {
     width: auto;
-    /*border: 1px solid #000000;*/
     p {
         .segoe-ui;
         font-size: 18px;
@@ -325,8 +314,169 @@ margin-left: -15px; */
 }
 /* ------------------------------------------- */
 
+/* MediaQueries */
+/* разрешение меньше 1010px но больше 570px*/
+@media screen and (max-width: 1010px) and (min-width: 571px) {
+    .maincontainer {
+        width: 90%;
+        height: 90%;
+    }
+    .wrapper {
+        height: 100%;
+        width: 100%;
+        min-height: 90%;
+        min-width: 90%;
+    }
+    .once-border {
+        display: none;
+    }
+    .double-border {
+        display: none;
+    }
+    .divider {
+        display: none;
+    }
+    .maincontainer__gridcols .cols.col-05percent  {
+        display: none;
+    }
+    .maincontainer__gridcols .cols.col-6 {width: 50%;}
+    .maincontainer__gridcols .cols.col-12 {width: 100%;}
+    .cl-01,
+    .cl-02,
+    .cl-03,
+    .cl-04,
+    .cl-05 {height: 20% ;}
 
+    .btn-text,
+    .options__btn-text_label,
+    .br-size_slider,
+    .options__br-size_label,
+    .options__br-radius_label,
+    .br-radius_slider,
+    .result__button,
+    .submit__button,
+    .html-code,
+    .css-code,
+    .e-mail-text {
+        padding: 3%;
 
+    }
+    .btn-text_input {
+        width: 100%;
+        height: 28px;
+        padding-left: 8px;
+    }
+
+    /* центровка элементов и границы для
+     визуального разделения зон формы
+     */
+    .result__button {
+        padding-left: 50%;
+        padding-top: 10%;
+        margin-left: -70px;
+
+    }
+    .submit__button {
+        padding-left: 50%;
+        margin-left: -54px;
+    }
+    .e-mail-text {
+        padding-left: 50%;
+        margin-left: -108px;
+    }
+    .css-code,
+    .html-code {
+        padding-left: 50%;
+        margin-left: -110px;
+    }
+    .cl-02,
+    .cl-04,
+    .cl-05
+    {
+        border-top: 1px dashed #a1a1a1;
+    }
+}
+/* ------------------------------------------- */
+
+/* разрешение меньше 570px */
+@media screen and (max-width: 570px) {
+    .maincontainer {
+        width: 90%;
+        height: 90%;
+    }
+    .wrapper {
+        height: 100%;
+        width: 100%;
+        min-height: 90%;
+        min-width: 90%;
+    }
+    .once-border {
+        display: none;
+    }
+    .double-border {
+        display: none;
+    }
+    .divider {
+        display: none;
+    }
+    .maincontainer__gridcols .cols.col-05percent  {
+        display: none;
+    }
+    .maincontainer__gridcols .cols.col-6,
+    .maincontainer__gridcols .cols.col-12 {width: 100%;}
+    .cl-01,
+    .cl-02,
+    .cl-03,
+    .cl-04,
+    .cl-05 {height: 20% ;}
+
+    .btn-text,
+    .options__btn-text_label,
+    .br-size_slider,
+    .options__br-size_label,
+    .options__br-radius_label,
+    .br-radius_slider,
+    .result__button,
+    .submit__button,
+    .html-code,
+    .css-code,
+    .e-mail-text {
+        padding: 10%;
+    }
+    .btn-text_input {
+        width: 100%;
+        height: 28px;
+        padding-left: 8px;
+    }
+
+    /* центровка элементов и границы для
+     визуального разделения зон формы
+     */
+    .result__button {
+        padding-left: 50%;
+        margin-left: -70px;
+    }
+    .submit__button {
+        padding-left: 50%;
+        margin-left: -54px;
+    }
+    .e-mail-text {
+        padding-left: 50%;
+        margin-left: -108px;
+    }
+    .css-code,
+    .html-code {
+        padding-left: 50%;
+        margin-left: -110px;
+    }
+    .cl-02,
+    .cl-04,
+    .cl-05
+    {
+        border-top: 1px dashed #a1a1a1;
+    }
+}
+/* ------------------------------------------- */
 
 
 
