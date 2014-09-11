@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head lang="ru" xmlns="http://www.w3.org/1999/html">
+<!--[if lt IE 8]>
+    <script src="js/IE8.js"></script>
+    <script src="js/selectivizr-min.js"></script>
+<![endif]-->
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>CSS-Генератор. Домашнее задание N2 -- Аксенов Т.С.</title>
@@ -20,15 +21,26 @@
     <!-- Favicon -->
     <link href="img/favicon/favicon.png" rel="shortcut icon">
 
-</head>
-
-<body>
-    <!--[if lt IE 7]>
-        <p class="browsehappy">
-            Вы используете броузер, который <strong>больше не поддерживается</strong>.
-            Пожалуйста, <a href="http://browsehappy.com/">обновите ваш броузер</a>
-            и почувствуйте себя круто!</p>
-    <![endif]-->
+        <!--[if lt IE 9]>
+            <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+            <script>window.html5 || document.write('<script src="js/vendor/html5shiv.js"><\/script>')</script>
+            <script src="js/selectivizr-min.js"></script>
+            <link rel="stylesheet" href="css/iemain.css">
+        <![endif]-->
+    </head>
+    <body>
+        <!--[if lt IE 9]>
+            <p class="browsehappy">
+                Вы используете броузер, который <strong>больше не поддерживается</strong>.
+                Пожалуйста, <a href="http://browsehappy.com/">обновите ваш броузер</a>
+                и почувствуйте себя круто!
+            </p>
+            <p class="browsehappy">
+                Хотя вы и можете продолжить работу по генерации кнопки в данном броузере,
+                но сгенерированный код кнопки, без особых ущирений, не будет работать
+                в броузере Internet Explorer 8 и ниже.
+            </p>
+        <![endif]-->
 
     <!-- SiteContent Here -->
     <div class="wrapper">
@@ -165,11 +177,16 @@
     <!-- SiteContent End -->
 
     <!-- JS -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.0.min.js"><\/script>')</script>
+
     <script src="js/jquery-2.1.1.min.js" type="text/javascript"></script>
     <script src="js/jquery-ui.js"></script>
     <script src="js/bootstrap.min.js" type="text/javascript"></script>
     <script src="js/less-1.7.4.min.js" type="text/javascript"></script>
     <script src="js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    <script src="js/jquery.ui.touch-punch.min.js"></script>
+
     <script src="js/main.js"></script>
 
 </body>
