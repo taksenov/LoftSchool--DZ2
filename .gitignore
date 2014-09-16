@@ -18,6 +18,7 @@ sitebellib.ini
 /temp
 /static/SQLs/
 migrations/
+/node_modules
 
 # ignore at dev-server
 /env

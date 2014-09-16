@@ -1,0 +1,619 @@
+/* author = taksenov@gmail.com */
+/* MainSettings */
+/* MIXINS */
+/* by https://bitbucket.org/wowua/ */
+.inlineblock {
+  display: inline-block;
+  vertical-align: top;
+  zoom: 1 !ie;
+  display: inline !ie;
+}
+.clearfix {
+  *zoom: expression(this.runtimeStyle.zoom='1', this.appendChild(document.createElement('br')).style.cssText='clear:both;font:0/0 serif');
+  zoom: 1 !ie;
+}
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+/* Fonts */
+/* MyriadPro font */
+@font-face {
+  font-family: "MyriadPro-Bold";
+  src: url("../../fonts/myriadpro/MyriadPro-Bold.eot");
+  src: url("../../fonts/myriadpro/MyriadPro-Bold.eot?#iefix") format("embedded-opentype"), url("../../fonts/myriadpro/MyriadPro-Bold.woff") format("woff"), url("../../fonts/myriadpro/MyriadPro-Bold.ttf") format("truetype"), url("../../fonts/myriadpro/MyriadPro-Bold.svg#MyriadPro-Bold") format("svg");
+}
+@font-face {
+  font-family: "MyriadPro-BoldCond";
+  src: url("../../fonts/myriadpro/MyriadPro-BoldCond.eot");
+  src: url("../../fonts/myriadpro/MyriadPro-BoldCond.eot?#iefix") format("embedded-opentype"), url("../../fonts/myriadpro/MyriadPro-BoldCond.woff") format("woff"), url("../../fonts/myriadpro/MyriadPro-BoldCond.ttf") format("truetype"), url("../../fonts/myriadpro/MyriadPro-BoldCond.svg#MyriadPro-BoldCond") format("svg");
+}
+@font-face {
+  font-family: "MyriadPro-BoldCondIt_0";
+  src: url("../../fonts/myriadpro/MyriadPro-BoldCondIt_0.eot");
+  src: url("../../fonts/myriadpro/MyriadPro-BoldCondIt_0.eot?#iefix") format("embedded-opentype"), url("../../fonts/myriadpro/MyriadPro-BoldCondIt_0.woff") format("woff"), url("../../fonts/myriadpro/MyriadPro-BoldCondIt_0.ttf") format("truetype"), url("../../fonts/myriadpro/MyriadPro-BoldCondIt_0.svg#MyriadPro-BoldCondIt_0") format("svg");
+}
+@font-face {
+  font-family: "MyriadPro-Cond";
+  src: url("../../fonts/myriadpro/MyriadPro-Cond.eot");
+  src: url("../../fonts/myriadpro/MyriadPro-Cond.eot?#iefix") format("embedded-opentype"), url("../../fonts/myriadpro/MyriadPro-Cond.woff") format("woff"), url("../../fonts/myriadpro/MyriadPro-Cond.ttf") format("truetype"), url("../../fonts/myriadpro/MyriadPro-Cond.svg#MyriadPro-Cond") format("svg");
+}
+@font-face {
+  font-family: "MyriadPro-It";
+  src: url("../../fonts/myriadpro/MyriadPro-It.eot");
+  src: url("../../fonts/myriadpro/MyriadPro-It.eot?#iefix") format("embedded-opentype"), url("../../fonts/myriadpro/MyriadPro-It.woff") format("woff"), url("../../fonts/myriadpro/MyriadPro-It.ttf") format("truetype"), url("../../fonts/myriadpro/MyriadPro-It.svg#MyriadPro-It") format("svg");
+}
+@font-face {
+  font-family: "MyriadPro-Regular";
+  src: url("../../fonts/myriadpro/MyriadPro-Regular.eot");
+  src: url("../../fonts/myriadpro/MyriadPro-Regular.eot?#iefix") format("embedded-opentype"), url("../../fonts/myriadpro/MyriadPro-Regular.woff") format("woff"), url("../../fonts/myriadpro/MyriadPro-Regular.ttf") format("truetype"), url("../../fonts/myriadpro/MyriadPro-Regular.svg#MyriadPro-Regular") format("svg");
+}
+@font-face {
+  font-family: "MyriadPro-Semibold";
+  src: url("../../fonts/myriadpro/MyriadPro-Semibold.eot");
+  src: url("../../fonts/myriadpro/MyriadPro-Semibold.eot?#iefix") format("embedded-opentype"), url("../../fonts/myriadpro/MyriadPro-Semibold.woff") format("woff"), url("../../fonts/myriadpro/MyriadPro-Semibold.ttf") format("truetype"), url("../../fonts/myriadpro/MyriadPro-Semibold.svg#MyriadPro-Semibold") format("svg");
+}
+.myriad-b {
+  font-family: "MyriadPro-Bold";
+}
+.myriad-bc {
+  font-family: "MyriadPro-BoldCond";
+}
+.myriad-bcit_0 {
+  font-family: "MyriadPro-BoldCondIt_0";
+}
+.myriad-c {
+  font-family: "MyriadPro-Cond";
+}
+.myriad-it {
+  font-family: "MyriadPro-It";
+}
+.myriad-r {
+  font-family: "MyriadPro-Regular";
+}
+.myriad-sb {
+  font-family: "MyriadPro-Semibold";
+}
+/* Segoe UI font */
+@font-face {
+  font-family: "Segoe UI";
+  src: url("../../fonts/SegoeUI/SegoeUI-font.eot");
+  src: url("../../fonts/SegoeUI/SegoeUI-font.eot?#iefix") format("embedded-opentype"), url("../../fonts/SegoeUI/SegoeUI-font.woff") format("woff"), url("../../fonts/SegoeUI/SegoeUI-font.ttf") format("truetype"), url("../../fonts/SegoeUI/SegoeUI-font.svg#Segoe UI") format("svg");
+}
+.segoe-ui {
+  font-family: "Segoe UI";
+}
+/* ------------------------------------------- */
+.wrapper {
+  position: relative;
+  min-height: 670px;
+  height: auto !important;
+  height: 100%;
+  overflow: hidden;
+  min-width: 1010px;
+}
+ul {
+  padding: 0;
+  margin: 0;
+}
+ul li {
+  padding: 0;
+  left: 0;
+  list-style: none outside none;
+}
+p {
+  padding: 0;
+  margin: 0;
+}
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+body {
+  background: url("../../img/common/bg.png") #e5e5e5;
+}
+/* запрет изменения размера textarea */
+textarea {
+  resize: none;
+}
+/* ------------------------------------------- */
+/* MainContainer */
+.maincontent {
+  padding-top: 10px;
+}
+.maincontainer {
+  *zoom: expression(this.runtimeStyle.zoom='1', this.appendChild(document.createElement('br')).style.cssText='clear:both;font:0/0 serif');
+  zoom: 1 !ie;
+  width: 1000px;
+  height: 650px;
+  background: #ffffff;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  /*    behavior: url(PIE.htc);*/
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  overflow: hidden;
+  margin: auto;
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.19), inset 0 2px rgba(255, 255, 255, 0.58), inset 0 0 5px rgba(255, 255, 255, 0.38);
+  -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.19), inset 0 2px rgba(255, 255, 255, 0.58), inset 0 0 5px rgba(255, 255, 255, 0.38);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.19), inset 0 2px rgba(255, 255, 255, 0.58), inset 0 0 5px rgba(255, 255, 255, 0.38);
+}
+.maincontainer:before,
+.maincontainer:after {
+  content: "";
+  display: table;
+}
+.maincontainer:after {
+  clear: both;
+}
+/* ------------------------------------------- */
+/* GridColumns */
+/* гвоздь! для row выяснилось что margin-right: -15px;
+margin-left: -15px; */
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+.maincontainer__gridcols .cols {
+  float: left;
+  margin: 0;
+  padding: 0;
+}
+.maincontainer__gridcols .cols.col-6 {
+  width: 49.75%;
+}
+.maincontainer__gridcols .cols.col-05percent {
+  width: 0.5%;
+}
+.maincontainer__gridcols .cols.col-12 {
+  width: 100%;
+}
+.cl-01 {
+  height: 78px  ;
+}
+.cl-02 {
+  height: 236px ;
+}
+.cl-03 {
+  height: 16px  ;
+}
+.cl-04 {
+  height: 170px ;
+}
+.cl-05 {
+  height: 150px ;
+}
+/* ------------------------------------------- */
+/* CaptionBlock */
+.csbg-caption {
+  font-family: "Segoe UI";
+  text-transform: uppercase;
+  color: #000000;
+  font-size: 24px;
+  font-weight: 400;
+  padding-top: 22px;
+  text-align: center;
+  line-height: 1;
+}
+/* ------------------------------------------- */
+/* Options and Result block */
+.options__caption {
+  width: auto;
+}
+.options__caption p {
+  font-family: "Segoe UI";
+  font-size: 18px;
+  font-weight: 400;
+  padding-top: 16px;
+  text-align: center;
+  line-height: 1;
+}
+.options__br-radius {
+  *zoom: expression(this.runtimeStyle.zoom='1', this.appendChild(document.createElement('br')).style.cssText='clear:both;font:0/0 serif');
+  zoom: 1 !ie;
+}
+.options__br-radius:before,
+.options__br-radius:after {
+  content: "";
+  display: table;
+}
+.options__br-radius:after {
+  clear: both;
+}
+.options__br-radius_label {
+  float: left;
+  width: 37.2%;
+  padding-top: 34px;
+  text-align: right;
+  line-height: 1;
+  font-size: 18px;
+  font-weight: 400;
+  font-family: "Segoe UI";
+}
+.br-radius_slider {
+  float: left;
+  width: 62.8%;
+  padding-top: 38px;
+  padding-left: 28px;
+  padding-right: 80px;
+}
+.options__br-size {
+  *zoom: expression(this.runtimeStyle.zoom='1', this.appendChild(document.createElement('br')).style.cssText='clear:both;font:0/0 serif');
+  zoom: 1 !ie;
+}
+.options__br-size:before,
+.options__br-size:after {
+  content: "";
+  display: table;
+}
+.options__br-size:after {
+  clear: both;
+}
+.options__br-size_label {
+  float: left;
+  width: 37.2%;
+  padding-top: 32px;
+  text-align: right;
+  line-height: 1;
+  font-size: 18px;
+  font-weight: 400;
+  font-family: "Segoe UI";
+}
+.br-size_slider {
+  float: left;
+  width: 62.8%;
+  padding-top: 38px;
+  padding-left: 28px;
+  padding-right: 80px;
+}
+.options__btn-text {
+  *zoom: expression(this.runtimeStyle.zoom='1', this.appendChild(document.createElement('br')).style.cssText='clear:both;font:0/0 serif');
+  zoom: 1 !ie;
+}
+.options__btn-text:before,
+.options__btn-text:after {
+  content: "";
+  display: table;
+}
+.options__btn-text:after {
+  clear: both;
+}
+.options__btn-text_label {
+  float: left;
+  width: 37.2%;
+  padding-top: 32px;
+  text-align: right;
+  line-height: 1;
+  font-size: 18px;
+  font-weight: 400;
+  font-family: "Segoe UI";
+}
+.btn-text {
+  float: left;
+  width: 62.8%;
+  padding-top: 28px;
+  padding-left: 28px;
+  color: #727272;
+  font-size: 12px;
+  font-weight: 400;
+  font-family: "MyriadPro-Regular";
+}
+.btn-text_input {
+  width: 200px;
+  height: 28px;
+  padding-left: 8px;
+}
+/* грязный хак для границы из трех линий*/
+.double-border {
+  float: left;
+  width: 3px;
+  height: 236px;
+  border-left: 3px double #cdcdcd;
+}
+.once-border {
+  float: left;
+  margin-top: 1px;
+  width: 2px;
+  border-right: 1px solid #cdcdcd;
+  height: 235px;
+}
+/* --------------------------------------- */
+.result__caption {
+  width: auto;
+}
+.result__caption p {
+  font-family: "Segoe UI";
+  font-size: 18px;
+  font-weight: 500;
+  padding-top: 16px;
+  text-align: center;
+  line-height: 1;
+}
+.result__button {
+  padding-top: 68px;
+  padding-left: 172px;
+}
+.result__button .result__button_prop {
+  /* эти свойства меняются в javascript */
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  border: solid 1px #3181b4;
+  /* ---------------------------------- */
+  height: 45px;
+  width: 140px;
+  background-color: #37a1e4;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.19), inset 0 2px rgba(255, 255, 255, 0.58), inset 0 0 5px rgba(255, 255, 255, 0.38);
+  -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.19), inset 0 2px rgba(255, 255, 255, 0.58), inset 0 0 5px rgba(255, 255, 255, 0.38);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.19), inset 0 2px rgba(255, 255, 255, 0.58), inset 0 0 5px rgba(255, 255, 255, 0.38);
+  background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.26), rgba(255, 255, 255, 0));
+  background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.26), rgba(255, 255, 255, 0));
+  background-image: -o-linear-gradient(top, rgba(255, 255, 255, 0.26), rgba(255, 255, 255, 0));
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.26), rgba(255, 255, 255, 0));
+  font-family: "Myriad Pro";
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.32);
+}
+/* ------------------------------------------- */
+/* Divider block */
+.divider {
+  margin: 0 30px;
+  border-bottom: 1px dashed #a1a1a1;
+  height: 16px;
+}
+/* ------------------------------------------- */
+/* Block of very good code */
+.html-code {
+  padding-left: 274px;
+  padding-top: 48px;
+  font-family: "MyriadPro-Regular";
+  color: #717171;
+  font-size: 12px;
+  font-weight: 400;
+}
+.html-code .html-code__textarea {
+  width: 220px;
+  height: 110px;
+  padding: 8px;
+}
+.css-code {
+  padding-top: 48px;
+  padding-left: 10px;
+  font-family: "MyriadPro-Regular";
+  color: #717171;
+  font-size: 12px;
+  font-weight: 400;
+}
+.css-code .css-code__textarea {
+  width: 220px;
+  height: 110px;
+  padding: 8px;
+}
+/* ------------------------------------------- */
+/* e-mail block */
+.e-mail-text {
+  padding-left: 390px;
+  padding-top: 4px;
+}
+.e-mail-text .e-mail-text_input {
+  height: 28px;
+  width: 218px;
+  font-family: "MyriadPro-Regular";
+  color: #727272;
+  font-size: 12px;
+  font-weight: 400;
+  padding-left: 8px;
+}
+.submit__button {
+  padding-left: 446px;
+  padding-top: 18px;
+}
+.submit__button .submit__button_prop {
+  height: 38px;
+  width: 108px;
+  -webkit-border-radius: 19px;
+  -moz-border-radius: 19px;
+  border-radius: 19px;
+  background-color: #50ac44;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.19), inset 0 2px rgba(255, 255, 255, 0.5), inset 0 0 5px rgba(255, 255, 255, 0.31);
+  -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.19), inset 0 2px rgba(255, 255, 255, 0.5), inset 0 0 5px rgba(255, 255, 255, 0.31);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.19), inset 0 2px rgba(255, 255, 255, 0.5), inset 0 0 5px rgba(255, 255, 255, 0.31);
+  border: solid 1px #3b8e31;
+  background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.34), rgba(255, 255, 255, 0));
+  background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.34), rgba(255, 255, 255, 0));
+  background-image: -o-linear-gradient(top, rgba(255, 255, 255, 0.34), rgba(255, 255, 255, 0));
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.34), rgba(255, 255, 255, 0));
+  font-family: "MyriadPro-Regular";
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.32);
+}
+/* ------------------------------------------- */
+/* MediaQueries */
+/* разрешение меньше 1010px но больше 570px*/
+@media screen and (max-width: 1010px) and (min-width: 571px) {
+  .maincontainer {
+    width: 90%;
+    height: 90%;
+  }
+  .wrapper {
+    height: 100%;
+    width: 100%;
+    min-height: 90%;
+    min-width: 90%;
+  }
+  .once-border {
+    display: none;
+  }
+  .double-border {
+    display: none;
+  }
+  .divider {
+    display: none;
+  }
+  .maincontainer__gridcols .cols.col-05percent {
+    display: none;
+  }
+  .maincontainer__gridcols .cols.col-6 {
+    width: 50%;
+  }
+  .maincontainer__gridcols .cols.col-12 {
+    width: 100%;
+  }
+  .cl-01,
+  .cl-02,
+  .cl-03,
+  .cl-04,
+  .cl-05 {
+    height: 20% ;
+  }
+  .btn-text,
+  .options__btn-text_label,
+  .br-size_slider,
+  .options__br-size_label,
+  .options__br-radius_label,
+  .br-radius_slider,
+  .result__button,
+  .submit__button,
+  .html-code,
+  .css-code,
+  .e-mail-text {
+    padding: 3%;
+  }
+  .btn-text_input {
+    width: 100%;
+    height: 28px;
+    padding-left: 8px;
+  }
+  /* центровка элементов и границы для
+     визуального разделения зон формы
+     */
+  .result__button {
+    padding-left: 50%;
+    padding-top: 10%;
+    margin-left: -70px;
+  }
+  .submit__button {
+    padding-left: 50%;
+    margin-left: -54px;
+  }
+  .e-mail-text {
+    padding-left: 50%;
+    margin-left: -108px;
+  }
+  .css-code,
+  .html-code {
+    padding-left: 50%;
+    margin-left: -110px;
+  }
+  .cl-02,
+  .cl-04,
+  .cl-05 {
+    border-top: 1px dashed #a1a1a1;
+  }
+}
+/* ------------------------------------------- */
+/* разрешение меньше 570px */
+@media screen and (max-width: 570px) {
+  .maincontainer {
+    width: 90%;
+    height: 90%;
+  }
+  .wrapper {
+    height: 100%;
+    width: 100%;
+    min-height: 90%;
+    min-width: 90%;
+  }
+  .once-border {
+    display: none;
+  }
+  .double-border {
+    display: none;
+  }
+  .divider {
+    display: none;
+  }
+  .maincontainer__gridcols .cols.col-05percent {
+    display: none;
+  }
+  .maincontainer__gridcols .cols.col-6,
+  .maincontainer__gridcols .cols.col-12 {
+    width: 100%;
+  }
+  .cl-01,
+  .cl-02,
+  .cl-03,
+  .cl-04,
+  .cl-05 {
+    height: 20% ;
+  }
+  .btn-text,
+  .options__btn-text_label,
+  .br-size_slider,
+  .options__br-size_label,
+  .options__br-radius_label,
+  .br-radius_slider,
+  .result__button,
+  .submit__button,
+  .html-code,
+  .css-code,
+  .e-mail-text {
+    padding: 10%;
+  }
+  .btn-text_input {
+    width: 100%;
+    height: 28px;
+    padding-left: 8px;
+  }
+  /* центровка элементов и границы для
+     визуального разделения зон формы
+     */
+  .result__button {
+    padding-left: 50%;
+    margin-left: -70px;
+  }
+  .submit__button {
+    padding-left: 50%;
+    margin-left: -54px;
+  }
+  .e-mail-text {
+    padding-left: 50%;
+    margin-left: -108px;
+  }
+  .css-code,
+  .html-code {
+    padding-left: 50%;
+    margin-left: -110px;
+  }
+  .cl-02,
+  .cl-04,
+  .cl-05 {
+    border-top: 1px dashed #a1a1a1;
+  }
+}
+/* ------------------------------------------- */
+/*
+
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+
+
+
+
+*/

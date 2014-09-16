@@ -126,7 +126,7 @@ textarea {
     padding-top: 10px;
 }
 .maincontainer {
-    .clearfix;
+    /*.clearfix;*/
     width: 1000px;
     height: 650px;
     background: #ffffff;
@@ -200,7 +200,7 @@ p {
 }
 
 .options__br-radius {
-    .clearfix;
+    /*.clearfix;*/
 }
 .options__br-radius_label {
     float: left;
@@ -219,7 +219,7 @@ p {
     padding-right: 80px;
 }
 .options__br-size {
-    .clearfix;
+    /*.clearfix;*/
 }
 .options__br-size_label {
     float: left;
@@ -238,7 +238,7 @@ p {
     padding-right: 80px;
 }
 .options__btn-text {
-    .clearfix;
+    /*.clearfix;*/
 }
 .options__btn-text_label {
     float: left;
