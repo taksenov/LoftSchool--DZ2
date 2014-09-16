@@ -5,6 +5,10 @@
 * Copyright 2014 jQuery Foundation and other contributors; Licensed MIT */
 
 /* Layout helpers
+
+
+
+ui-slider-handle ui-state-default ui-corner-all
 ----------------------------------*/
 .ui-helper-hidden {
 	display: none;
@@ -199,7 +203,8 @@
 /*	background: #000000 *//*#f6f6f6 url("../../img/jqui/images/ui-bg_glass_100_f6f6f6_1x400.png")*//* 50% 50% repeat-x;*/
     /* Taksenov 03-09-2014 изменена ручка ползунка*/
 	border: none;
-    background: /*#ffffff*/ url("../../img/jqui/images/handle.png") round;
+    background: /*#ffffff*/ url("../../img/jqui/images/handle.png")  no-repeat;
+
     font-weight: bold;
 	color: #1c94c4;
 }
@@ -219,7 +224,7 @@
 	background: #000000 *//*#fdf5ce url("../../img/jqui/images/ui-bg_glass_100_fdf5ce_1x400.png")*//* 50% 50% repeat-x;*/
     /* Taksenov 03-09-2014 изменена ручка ползунка*/
 	border: none;
-    background: /*#ffffff*/ url("../../img/jqui/images/handle.png") round;
+    background: /*#ffffff*/ url("../../img/jqui/images/handle.png") no-repeat;
     font-weight: bold;
 	color: #c77405;
 }
@@ -241,7 +246,7 @@
 	background: #000000 *//*#ffffff*//* *//*url("../../img/jqui/images/ui-bg_glass_65_ffffff_1x400.png")*//* 50% 50% repeat-x;*/
     /* Taksenov 03-09-2014 изменена ручка ползунка*/
 	border: none;
-    background: /*#ffffff*/ url("../../img/jqui/images/handle.png") round;
+    background: /*#ffffff*/ url("../../img/jqui/images/handle.png")  no-repeat;
 	font-weight: bold;
 	color: #eb8f00;
 }
