@@ -27,6 +27,7 @@ gulp.task('css', function () {
               './css/vendors/jquery-ui.css',
               './css/vendors/*.css',
               './css/less-compilation/main.css',
+              '!./css/vendors/jquery-ui.theme.css',
               '!./css/vendors/*.min.css'
               ])
         .pipe(concatCSS('bundle.css'))
@@ -80,5 +81,4 @@ gulp.task('default', [
                       'css',
                       'ie8Css',
                       'js'
-
                      ]);
