@@ -14,6 +14,7 @@
 
         /* Переменные, заданные как свойства app */
         btnResult : $('.result__button_prop'),
+        temp111 : $('.result__button'),
         htmlCodeResultArea : $('#html-code__text'),
         cssCodeResultArea : $('#css-code__text'),
         /* ------------------------------------- */
@@ -26,6 +27,10 @@
             /* Инпут для изменения текста кнопки  */
             $(document).ready($.proxy(this.btnTextChange, this));
             $('#btn-text_value').on('keyup', $.proxy(this.btnTextChange, this));
+
+            /* Валидация введенного email и отправка почты */
+            $('form').on('submit', app.submitForm);
+            $('form').on('keydown', 'input', app.removeError);
         },
 
         /* Ползунок изменения border-radius'а */
@@ -77,7 +82,14 @@
         cssResult: function(){
 
             var btnBorderRadius = this.btnResult.css('border-radius'),
-                btnBorder = this.btnResult.css('border-width');
+                btnBorder = this.btnResult.css('border-width'),
+                ua = navigator.userAgent;
+/*            ua = navigator.userAgent;*/
+            if (ua.search(/Firefox/) > -1) {
+
+
+                btnBorderRadius = this.temp111.css('border-radius')
+            }
 
             this.cssCodeResultArea.text(
                 /* Статический код CSS */
@@ -92,6 +104,7 @@
                 '-moz-border-radius: '    + btnBorderRadius + ';\n' +
                 'border-radius: '         + btnBorderRadius + ';\n' +
                 'border: '                + btnBorder + ' solid rgb(49, 129, 180);\n' +
+                '/* ------------------------------------- */\n' +
                 /* ------------------------------------- */
 
                 /* Статический код CSS */
@@ -124,6 +137,67 @@
                 '<button class="super-button" id=""> ' + inputText + ' </button>\n' +
                 '<!-- Button end -->'
             );
+        },
+        /* ------------------------------------- */
+
+        /* Валидация введенного email и отправка почты */
+        submitForm: function (e) {
+            e.preventDefault();
+
+            var form = $(this);
+                submitBtn = form.find('button[type="submit"]');
+
+            if( app.validateForm(form) === false ) return false;
+
+            submitBtn.attr('disabled', 'disabled');
+
+            var str = form.serialize();
+
+            $.ajax({
+                url: 'email_form/send.php',
+                type: 'POST',
+                data: str
+            })
+            .done(function(msg) {
+                if(msg === "OK"){
+                    var result = "<div class='bg-success'>Код кнопки отправлен на ваш адрес электронной почты.</div>"
+                    form.html(result);
+                }else{
+                    form.html(msg);
+                }
+            })
+            .always(function() {
+                submitBtn.removeAttr('disabled');
+            });
+
+        },
+
+        validateForm: function (form) {
+            var inputs = form.find('input'),
+                valid = true;
+
+            inputs.tooltip('destroy');
+
+            $.each(inputs, function(index, val) {
+                var input = $(val),
+                    val = input.val(),
+                    textError = 'Введите адрес электронной почты' ;
+
+                if(val.length === 0){
+                    input.tooltip({
+                        trigger: 'manual',
+                        placement: 'right',
+                        title: textError
+                    }).tooltip('show');
+                    valid = false;
+                }else{
+                }
+            });
+
+            return valid;
+        },
+
+        removeError: function () {
         }
         /* ------------------------------------- */
     }
