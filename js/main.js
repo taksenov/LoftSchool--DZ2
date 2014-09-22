@@ -95,21 +95,26 @@
 
         /* Замена текста на кнопке */
         btnTextChange: function() {
+            var text = $('#btn-text_value').val();
             $('#result__button_value').text($('#btn-text_value').val());
+            if (text == '') {
+                $('#result__button_value').text('Button text');
+            }
         this.htmlResult();
         },
         /* ------------------------------------- */
 
         /* html и css код кнопки */
-
         cssResult: function( ){
 
             var btnBorderRadius = this.btnResult.css('border-radius'),
                 btnBorder = this.btnResult.css('border-width');
 
-            /* Костыль! Для того чтоб работало в FireFox */
+            /* Костыль! Для того чтоб работало в FireFox и в IE8+
+            *  У меня стойкое ощущение, что я где-то наговнокодил
+            * */
                 ua = navigator.userAgent;
-            if (ua.search(/Firefox/) > -1) {
+            if ( (ua.search(/Firefox/) > -1) || (ua.search(/explorer/)) ) {
                 var btnBorderRadius, btnBorder;
                 btnBorderRadius = app.ff_i1;
                 btnBorder = app.ff_i2;
@@ -155,7 +160,10 @@
         },
 
         htmlResult: function(){
-            var inputText = $('#btn-text_value').val()
+            var inputText = $('#btn-text_value').val();
+            if (inputText == '') {
+                inputText = 'Button text'
+            }
             this.htmlCodeResultArea.text(
                 '<!-- HTML -->\n' +
                 '<!-- Button. Код сгенерирован автоматически -->\n' +
