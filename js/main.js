@@ -14,7 +14,6 @@
 
         /* Переменные, заданные как свойства app */
         btnResult : $('.result__button_prop'),
-        temp111 : $('.result__button'),
         htmlCodeResultArea : $('#html-code__text'),
         cssCodeResultArea : $('#css-code__text'),
         /* ------------------------------------- */
@@ -31,7 +30,22 @@
             /* Валидация введенного email и отправка почты */
             $('form').on('submit', app.submitForm);
             $('form').on('keydown', 'input', app.removeError);
+
+            /* Костыль! Для того чтоб при загрузке страницы в FireFox
+             в textarea встали значения по умолчанию */
+            $(document).ready($.proxy(this.loadPageInFirefox, this));
         },
+
+        /* Костыль! Загрузка страницы в FireFox
+           и передача в textarea значений по умолчанию */
+        loadPageInFirefox: function () {
+            var ff_i1 = 4,
+                ff_i2 = 1;
+            app.ff_i1 = ff_i1;
+            app.ff_i2 = ff_i2;
+            this.cssResult();
+        },
+        /* ------------------------------------- */
 
         /* Ползунок изменения border-radius'а */
         sliderBorderRadius: function() {
@@ -48,6 +62,10 @@
             this.btnResult.css({
                 'border-radius' : ui.value
             });
+            /* Костыль! Для того чтоб работало в FireFox */
+            var ff_i1 = ui.value;
+            app.ff_i1 = ff_i1;
+            /* -------------------------------- */
             this.cssResult();
         },
         /* ------------------------------------- */
@@ -67,6 +85,10 @@
             this.btnResult.css({
                'border-width' : ui.value
             });
+            /* Костыль! Для того чтоб работало в FireFox */
+            var ff_i2 = ui.value;
+            app.ff_i2 = ff_i2;
+            /* -------------------------------- */
             this.cssResult();
         },
         /* ------------------------------------- *
@@ -79,17 +101,20 @@
         /* ------------------------------------- */
 
         /* html и css код кнопки */
-        cssResult: function(){
+
+        cssResult: function( ){
 
             var btnBorderRadius = this.btnResult.css('border-radius'),
-                btnBorder = this.btnResult.css('border-width'),
+                btnBorder = this.btnResult.css('border-width');
+
+            /* Костыль! Для того чтоб работало в FireFox */
                 ua = navigator.userAgent;
-/*            ua = navigator.userAgent;*/
             if (ua.search(/Firefox/) > -1) {
-
-
-                btnBorderRadius = this.temp111.css('border-radius')
+                var btnBorderRadius, btnBorder;
+                btnBorderRadius = app.ff_i1;
+                btnBorder = app.ff_i2;
             }
+            /* -------------------------------- */
 
             this.cssCodeResultArea.text(
                 /* Статический код CSS */
