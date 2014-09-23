@@ -106,7 +106,7 @@
                                             </p>
                                         </div>
                                         <div class="btn-text">
-                                            <input class="btn-text_input" id="btn-text_value"  type="text" value="Button text"/>
+                                            <input class="btn-text_input" id="btn-text_value"  type="text" value="Button text" placeholder="Button text"/>
                                         </div>
                                     </div>
                                 </li>
@@ -149,15 +149,18 @@
                     <!-- Divider block -->
 
                     <!-- Block of very good code  -->
+
+                    <form action="" method="post">
+
                     <div class="row">
                         <div class="cols col-6 cl-04">
                             <div class="html-code">
-                                <textarea name="" id="html-code__text" class="html-code__textarea" readonly>HTML code</textarea>
+                                <textarea name="htmlcode" id="html-code__text" class="html-code__textarea" readonly>HTML code</textarea>
                             </div>
                         </div>
                         <div class="cols col-6 cl-04">
                             <div class="css-code">
-                                <textarea name="" id="css-code__text" class="css-code__textarea" readonly>CSS code</textarea>
+                                <textarea name="csscode" id="css-code__text" class="css-code__textarea" readonly>CSS code</textarea>
                             </div>
                         </div>
                     </div>
@@ -166,14 +169,20 @@
                     <!-- e-mail block -->
                     <div class="row">
                         <div class="cols col-12 cl-05">
-                            <div class="e-mail-text">
-                                <input class="e-mail-text_input" type="text" placeholder="mail"/>
-                            </div>
-                            <div class="submit__button">
-                                <button class="submit__button_prop">Submit</button>
-                            </div>
+
+                                <div class="e-mail-text">
+                                    <input class="e-mail-text_input" type="email" id="inputEmail" name="email" placeholder="mail"/>
+                                </div>
+                                <div class="submit__button">
+                                    <button type="submit" class="submit__button_prop">Submit</button>
+                                </div>
+
+
                         </div>
                     </div>
+
+                    </form>
+
                     <!-- e-mail block -->
                 </div>
                 <!-- GridColumns -->

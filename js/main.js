@@ -108,7 +108,7 @@
             var _this = this;
             var text = $('#btn-text_value').val();
             $('#result__button_value').text($('#btn-text_value').val());
-            if (text == '') {
+            if (text === '') {
                 $('#result__button_value').text('Button text');
             }
         _this.htmlResult();
@@ -175,7 +175,7 @@
             var _this = this;
 
             var inputText = $('#btn-text_value').val();
-            if (inputText == '') {
+            if (inputText === '') {
                 inputText = 'Button text'
             }
             _this.htmlCodeResultArea.text(
