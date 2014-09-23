@@ -210,9 +210,11 @@
             .done(function(msg) {
                 if(msg === "OK"){
                     var result = "<div class='bg-success'>Код кнопки отправлен на ваш адрес электронной почты.</div>"
-                    form.html(result);
+                    $('#valid').html(result);
+                    //form.html();
                 }else{
-                    form.html(msg);
+                    //form.html(msg);
+                    $('#valid').html(msg);
                 }
             })
             .always(function() {
