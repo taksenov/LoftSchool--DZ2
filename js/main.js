@@ -2,13 +2,15 @@
 
     var app = {
         initialize: function(){
-            this.setUpListeners();
+            var _this = this;
 
-            this.sliderBorderRadius();
-            this.sliderBorderSize();
+            _this.setUpListeners();
 
-            this.cssResult();
-            this.htmlResult();
+            _this.sliderBorderRadius();
+            _this.sliderBorderSize();
+
+            _this.cssResult();
+            _this.htmlResult();
 
         },
 
@@ -19,13 +21,16 @@
         /* ------------------------------------- */
 
         setUpListeners: function(){
+            var _this = this;
+
+
             /* Слайдеры для изменения бордер радиуса и границы кнопки */
-            $( '#slider__br-radius').on('slide change stop', $.proxy(this.borderRadChange, this));
-            $( '#slider__br-size' ).on('slide change stop', $.proxy(this.borderSizeChange, this));
+            $( '#slider__br-radius').on('slide change stop', $.proxy(_this.borderRadChange, _this));
+            $( '#slider__br-size' ).on('slide change stop', $.proxy(_this.borderSizeChange, _this));
 
             /* Инпут для изменения текста кнопки  */
-            $(document).ready($.proxy(this.btnTextChange, this));
-            $('#btn-text_value').on('keyup', $.proxy(this.btnTextChange, this));
+            $(document).ready($.proxy(_this.btnTextChange, _this));
+            $('#btn-text_value').on('keyup', $.proxy(_this.btnTextChange, _this));
 
             /* Валидация введенного email и отправка почты */
             $('form').on('submit', app.submitForm);
@@ -33,17 +38,18 @@
 
             /* Костыль! Для того чтоб при загрузке страницы в FireFox
              в textarea встали значения по умолчанию */
-            $(document).ready($.proxy(this.loadPageInFirefox, this));
+            $(document).ready($.proxy(_this.loadPageInFirefox, _this));
         },
 
         /* Костыль! Загрузка страницы в FireFox
            и передача в textarea значений по умолчанию */
         loadPageInFirefox: function () {
             var ff_i1 = 4,
-                ff_i2 = 1;
+                ff_i2 = 1,
+                _this = this;
             app.ff_i1 = ff_i1;
             app.ff_i2 = ff_i2;
-            this.cssResult();
+            _this.cssResult();
         },
         /* ------------------------------------- */
 
@@ -59,14 +65,16 @@
         },
 
         borderRadChange: function(event, ui) {
-            this.btnResult.css({
+            var _this = this;
+
+            _this.btnResult.css({
                 'border-radius' : ui.value
             });
             /* Костыль! Для того чтоб работало в FireFox */
             var ff_i1 = ui.value;
             app.ff_i1 = ff_i1;
             /* -------------------------------- */
-            this.cssResult();
+            _this.cssResult();
         },
         /* ------------------------------------- */
 
@@ -82,33 +90,37 @@
         },
 
         borderSizeChange: function(event, ui) {
-            this.btnResult.css({
+            var _this = this;
+
+            _this.btnResult.css({
                'border-width' : ui.value
             });
             /* Костыль! Для того чтоб работало в FireFox */
             var ff_i2 = ui.value;
             app.ff_i2 = ff_i2;
             /* -------------------------------- */
-            this.cssResult();
+            _this.cssResult();
         },
         /* ------------------------------------- *
 
         /* Замена текста на кнопке */
         btnTextChange: function() {
+            var _this = this;
             var text = $('#btn-text_value').val();
             $('#result__button_value').text($('#btn-text_value').val());
             if (text == '') {
                 $('#result__button_value').text('Button text');
             }
-        this.htmlResult();
+        _this.htmlResult();
         },
         /* ------------------------------------- */
 
         /* html и css код кнопки */
         cssResult: function( ){
+            var _this = this;
 
-            var btnBorderRadius = this.btnResult.css('border-radius'),
-                btnBorder = this.btnResult.css('border-width');
+            var btnBorderRadius = _this.btnResult.css('border-radius'),
+                btnBorder = _this.btnResult.css('border-width');
 
             /* Костыль! Для того чтоб работало в FireFox и в IE8+
             *  У меня стойкое ощущение, что я где-то наговнокодил
@@ -121,7 +133,7 @@
             }
             /* -------------------------------- */
 
-            this.cssCodeResultArea.text(
+            _this.cssCodeResultArea.text(
                 /* Статический код CSS */
                 '/* CSS */\n' +
                 '/* Button. Код сгенерирован автоматически */\n' +
@@ -160,11 +172,13 @@
         },
 
         htmlResult: function(){
+            var _this = this;
+
             var inputText = $('#btn-text_value').val();
             if (inputText == '') {
                 inputText = 'Button text'
             }
-            this.htmlCodeResultArea.text(
+            _this.htmlCodeResultArea.text(
                 '<!-- HTML -->\n' +
                 '<!-- Button. Код сгенерирован автоматически -->\n' +
                 '<button class="super-button" id=""> ' + inputText + ' </button>\n' +
@@ -175,9 +189,11 @@
 
         /* Валидация введенного email и отправка почты */
         submitForm: function (e) {
+            var _this = this;
+
             e.preventDefault();
 
-            var form = $(this);
+            var form = $(_this);
                 submitBtn = form.find('button[type="submit"]');
 
             if( app.validateForm(form) === false ) return false;
