@@ -60,8 +60,11 @@
         }
 
         if(!$error){
-            $mail = mail(CONTACT_FORM, $subject, $message,
-                 "From: Admin <".$email.">\r\n"
+            $mail = mail(
+//            CONTACT_FORM,
+             $email,
+             $subject, $message,
+                 "From: Admin <root@ip34.ru>\r\n"
                 ."Reply-To: ".$email."\r\n"
                 ."Content-type: text/html; charset=utf-8 \r\n"
                 ."X-Mailer: PHP/" . phpversion());
