@@ -188,10 +188,10 @@
         /* ------------------------------------- */
 
         /* Валидация введенного email и отправка почты */
-        submitForm: function (e) {
+        submitForm: function (email_my) {
             var _this = this;
 
-            e.preventDefault();
+            email_my.preventDefault();
 
             var form = $(_this);
                 submitBtn = form.find('button[type="submit"]');
